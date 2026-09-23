@@ -15,9 +15,9 @@ export default function Navbar() {
     <nav className="site-navbar" aria-label="Primary navigation">
       <div className="site-container">
         <Link to="/" className="site-title">
-          <span className="site-mark">MP</span>
+          <span className="site-mark">ASN</span>
           <span className="site-title-copy">
-            <strong>MyPortfolio</strong>
+            <strong>ANBUSELVAM N</strong>
             <small>Creative developer</small>
           </span>
         </Link>
