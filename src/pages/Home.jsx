@@ -15,11 +15,11 @@ export default function Home() {
           I build thoughtful digital experiences that balance clean design with dependable code.
         </p>
         <div className="home-actions">
-          <Link to="/projects" className="home-primary-action">Explore my work <span aria-hidden="true">↗</span></Link>
+          <Link to="/projects" className="home-primary-action">Explore my work</Link>
           <div className="home-social-links" aria-label="Online profiles">
-            <a href="https://www.linkedin.com/in/anbu-selvam-n-727455319/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/anbu6667/anbu-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <Link to="/contact">Contact</Link>
+            <a href="https://www.linkedin.com/in/anbu-selvam-n-727455319/" target="_blank" rel="noopener noreferrer" className="home-social-button">LinkedIn</a>
+            <a href="https://github.com/anbu6667/anbu-portfolio" target="_blank" rel="noopener noreferrer" className="home-social-button">GitHub</a>
+            <Link to="/contact" className="home-social-button">Contact</Link>
           </div>
         </div>
         <div className="home-highlights" aria-label="Portfolio highlights">
