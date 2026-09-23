@@ -29,15 +29,6 @@ const projects = [
       "A recommendation engine that suggests books based on user interests, preferences, and reading patterns.",
   },
   {
-    title: "Proximity Activated Braking System",
-    type: "IoT safety system",
-    tags: ["Sensors", "Automation"],
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Modern car on a road",
-    description:
-      "An IoT and sensor-based safety system that automatically triggers braking when obstacles are detected.",
-  },
-  {
     title: "Travel Planner",
     type: "Planning experience",
     tags: ["Routes", "Budgeting"],
@@ -77,7 +68,7 @@ export default function Projects() {
             A collection of experiments and practical products focused on people, accessibility, and smart problem-solving.
           </p>
           <div className="projects-summary" aria-label="Project summary">
-            <span><strong>06</strong> projects</span>
+            <span><strong>05</strong> projects</span>
             <span><strong>03</strong> focus areas</span>
             <span><strong>01</strong> curious builder</span>
           </div>
