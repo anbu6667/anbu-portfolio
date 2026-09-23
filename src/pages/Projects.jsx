@@ -46,6 +46,15 @@ const projects = [
     description:
       "A smart planner that helps users organize trips with optimized routes, budget planning, and suggestions.",
   },
+  {
+    title: "Consultancy Project",
+    type: "Business solution",
+    tags: ["Consulting", "Web app"],
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Consultants discussing a project around a table",
+    description:
+      "A practical digital solution created to organize consultancy workflows, client communication, and project delivery.",
+  },
 ];
 
 export default function Projects() {
@@ -68,7 +77,7 @@ export default function Projects() {
             A collection of experiments and practical products focused on people, accessibility, and smart problem-solving.
           </p>
           <div className="projects-summary" aria-label="Project summary">
-            <span><strong>05</strong> projects</span>
+            <span><strong>06</strong> projects</span>
             <span><strong>03</strong> focus areas</span>
             <span><strong>01</strong> curious builder</span>
           </div>
