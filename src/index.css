@@ -253,7 +253,7 @@ body {
 }
 
 .home-content {
-  width: min(100%, 760px);
+  width: min(100%, 1080px);
 }
 
 .home-photo-frame {
@@ -268,6 +268,7 @@ body {
   font-weight: bold;
   color: #1e293b;
   margin: 0;
+  white-space: nowrap;
 }
 
 .home-title span {
@@ -426,6 +427,10 @@ body {
 @media (max-width: 600px) {
   .home {
     padding: 52px 18px 64px;
+  }
+
+  .home-title {
+    white-space: normal;
   }
 
   .home-photo {
