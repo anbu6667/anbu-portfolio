@@ -16,7 +16,6 @@ export default function Home() {
         </p>
         <div className="home-actions">
           <Link to="/projects" className="home-primary-action">Explore my work <span aria-hidden="true">↗</span></Link>
-          <Link to="/contact" className="home-secondary-action">Let's connect</Link>
         </div>
         <div className="home-highlights" aria-label="Portfolio highlights">
           <div><strong>05+</strong><span>Projects</span></div>

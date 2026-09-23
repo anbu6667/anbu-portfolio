@@ -1,35 +1,38 @@
+import { Link } from "react-router-dom";
+
 export default function About() {
 	return (
-		<main className="page-center">
-			<div className="page-content">
-				<h1 className="page-title">About Me</h1>
+		<main className="about-page">
+			<div className="about-layout">
+				<section className="about-intro">
+					<p className="about-kicker">A little about me</p>
+					<h1 className="about-title">I turn thoughtful ideas into useful digital experiences.</h1>
+					<p className="about-lead">
+						I am Anbu Selvam N, a Computer Science student and aspiring full stack developer
+						who enjoys bringing design and technology together.
+					</p>
+					<p className="about-copy">
+						My work sits between clean interfaces and dependable code. I care about making
+						websites easy to understand, comfortable to use, and responsive on every screen.
+					</p>
+					<div className="about-actions">
+						<Link to="/projects" className="about-primary-action">Explore Projects <span aria-hidden="true">-&gt;</span></Link>
+					</div>
+				</section>
 
-				{/* Photo below heading */}
-				<img
-					src="/pro.jpg"
-					alt="My Photo"
-					className="about-photo"
-					style={{
-						width: "180px",
-						borderRadius: "12px",
-						marginTop: "20px",
-						marginBottom: "20px"
-					}}
-				/>
-
-				<p className="home-subtitle" style={{ marginTop: "15px" }}>
-I'm a creative and detail‑oriented developer with a passion for building
-beautiful, functional, and user‑friendly digital experiences.
-</p>    <p className="home-subtitle">
-My skills include Web Designing, Graphic Designing, UI/UX Design,
-and crafting modern responsive interfaces.
-</p>
-
-
-<p className="home-subtitle">
-I enjoy transforming ideas into clean, efficient code and visually
-appealing layouts that enhance user engagement.
-</p>
+				<aside className="about-profile" aria-label="Profile summary">
+					<img src="/pro.jpg" alt="Anbu Selvam N" className="about-photo" />
+					<div className="about-profile-copy">
+						<p className="about-profile-label">Currently learning</p>
+						<h2>Full stack development</h2>
+						<p>Building stronger skills in React, Node.js, databases, and modern UI design.</p>
+					</div>
+					<div className="about-details">
+						<div><span>Education</span><strong>BE Computer Science</strong></div>
+						<div><span>College</span><strong>Kongu Engineering College</strong></div>
+						<div><span>Strengths</span><strong>Design, code, problem solving</strong></div>
+					</div>
+				</aside>
 			</div>
 		</main>
 	);

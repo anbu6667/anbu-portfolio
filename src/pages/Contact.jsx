@@ -2,25 +2,45 @@ import React, { useState } from "react";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", contact: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
 
   function handleChange(e) {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
+    setSubmitted(false);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Client-side placeholder: you can hook this up to an API or email service.
-    alert(`Message sent!\nName: ${form.name}\nContact: ${form.contact}\nMessage: ${form.message}`);
-    setForm({ name: "", contact: "", message: "" });
+    const subject = `Portfolio message from ${form.name}`;
+    const body = [
+      `Name: ${form.name}`,
+      `Contact: ${form.contact}`,
+      "",
+      form.message
+    ].join("\n");
+
+    window.location.href = `mailto:anbuselvamkgm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
   }
 
   return (
-    <main className="page-center">
-      <div className="page-content">
-        <h1 className="page-title">Contact</h1>
+    <main className="contact-page">
+      <div className="contact-content">
+        <header className="contact-header">
+          <p className="contact-kicker">Start a conversation</p>
+          <h1 className="contact-title">Have an idea? Let&apos;s talk.</h1>
+          <p className="contact-intro">
+            Whether you have a project in mind, a question, or an opportunity to share,
+            send a message and I&apos;ll get back to you.
+          </p>
+        </header>
 
-        <div className="contact-inline">
+        <div className="contact-layout">
+          <section className="contact-info-panel">
+            <h2>Find me here</h2>
+            <p>I&apos;m open to learning opportunities, collaborations, and meaningful web projects.</p>
+            <div className="contact-inline">
           <div className="info-row">
             <svg className="info-icon" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden>
               <rect width="24" height="24" rx="4" fill="#2563eb" />
@@ -45,10 +65,14 @@ export default function Contact() {
             </svg>
             <a href="https://www.linkedin.com/in/anbu-selvam-n-727455319/" target="_blank" rel="noopener noreferrer" className="contact-link">Anbu Selvam N</a>
           </div>
-        </div>
+            </div>
+          </section>
 
-        <div className="contact-grid">
           <section className="contact-form">
+            <div className="contact-form-heading">
+              <h2>Send a message</h2>
+              <p>Tell me a little about what you&apos;re working on.</p>
+            </div>
             <form onSubmit={handleSubmit} className="form-stack">
               <label className="form-label">
                 Name
@@ -56,8 +80,8 @@ export default function Contact() {
               </label>
 
               <label className="form-label">
-                Contact (email or phone)
-                <input name="contact" value={form.contact} onChange={handleChange} className="form-input" type="text" placeholder="Email or phone" required />
+                Email
+                <input name="contact" value={form.contact} onChange={handleChange} className="form-input" type="email" placeholder="you@example.com" autoComplete="email" required />
               </label>
 
               <label className="form-label">
@@ -68,6 +92,7 @@ export default function Contact() {
               <div className="form-actions">
                 <button type="submit" className="primary-btn">Send Message</button>
               </div>
+              {submitted && <p className="form-success" role="status">Your email app opened with the message ready to send.</p>}
             </form>
           </section>
         </div>

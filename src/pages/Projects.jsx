@@ -63,7 +63,6 @@ export default function Projects() {
     <main className="projects-section">
       <div className="page-content">
         <header className="projects-header">
-          <p className="projects-kicker">Selected work · 2023—2026</p>
           <h1 className="projects-title">Ideas turned into useful experiences.</h1>
           <p className="projects-intro">
             A collection of experiments and practical products focused on people, accessibility, and smart problem-solving.
@@ -90,10 +89,15 @@ export default function Projects() {
               <div className={`project-overview ${visible[idx] ? "is-visible" : ""}`}>
                 <p className="project-description">{project.description}</p>
               </div>
-              <button className="project-btn" onClick={() => toggle(idx)} aria-expanded={visible[idx]}>
-                {visible[idx] ? "Hide overview" : "Read overview"}
-                <span aria-hidden="true">{visible[idx] ? "−" : "+"}</span>
-              </button>
+              <div className="project-actions">
+                <button className="project-btn" onClick={() => toggle(idx)} aria-expanded={visible[idx]}>
+                  {visible[idx] ? "Hide overview" : "Read overview"}
+                  <span aria-hidden="true">{visible[idx] ? "−" : "+"}</span>
+                </button>
+                <button className="project-visit-btn" type="button" disabled title="Website link coming soon">
+                  Visit website
+                </button>
+              </div>
             </article>
           ))}
         </div>

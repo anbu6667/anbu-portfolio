@@ -1,29 +1,47 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
-  return (
-    <nav className="site-navbar">
-      <div className="site-container">
-        <Link to="/" className="site-title">MyPortfolio</Link>
+  const links = [
+    ["Home", "/"],
+    ["About", "/about"],
+    ["Skills", "/skills"],
+    ["Projects", "/projects"],
+    ["Certifications", "/certifications"],
+    ["Resume", "/resume"],
+  ];
 
-        <ul className="nav-list">
-          {[
-            ["Home", "/"],
-            ["About", "/about"],
-            ["Skills", "/skills"],
-            ["Projects", "/projects"],
-            ["Certifications", "/certifications"],
-            ["Resume", "/resume"],
-            ["Contact", "/contact"],
-          ].map(([text, path]) => (
-            <li key={text}>
-              <Link to={path} className="nav-link">
-                {text}
-              </Link>
-            </li>
-          ))}
-        </ul>
+  return (
+    <nav className="site-navbar" aria-label="Primary navigation">
+      <div className="site-container">
+        <Link to="/" className="site-title">
+          <span className="site-mark">MP</span>
+          <span className="site-title-copy">
+            <strong>MyPortfolio</strong>
+            <small>Creative developer</small>
+          </span>
+        </Link>
+
+        <div className="nav-panel">
+          <ul className="nav-list" id="primary-navigation">
+            {links.map(([text, path]) => (
+              <li key={text}>
+                <NavLink
+                  to={path}
+                  end={path === "/"}
+                  className={({ isActive }) => `nav-link${isActive ? " is-active" : ""}`}
+                >
+                  {text}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <Link to="/contact" className="nav-cta">
+            <span className="nav-cta-dot" aria-hidden="true" />
+            <span className="nav-cta-label">Let's talk</span>
+            <span className="nav-cta-arrow" aria-hidden="true">-&gt;</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );
