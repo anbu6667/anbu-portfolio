@@ -7,7 +7,7 @@ export default function Resume() {
         {/* Embed Resume PDF */}
         <div className="resume-viewer">
           <iframe
-            src="/resume.pdf"
+            src="/res.pdf%20(1).pdf"
             title="Resume"
             width="100%"
             height="100%"
@@ -17,7 +17,7 @@ export default function Resume() {
 
         {/* Download button */}
         <a
-          href="/resume.pdf"
+          href="/res.pdf%20(1).pdf"
           download
           className="resume-download-btn"
         >
