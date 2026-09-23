@@ -16,6 +16,11 @@ export default function Home() {
         </p>
         <div className="home-actions">
           <Link to="/projects" className="home-primary-action">Explore my work <span aria-hidden="true">↗</span></Link>
+          <div className="home-social-links" aria-label="Online profiles">
+            <a href="https://www.linkedin.com/in/anbu-selvam-n-727455319/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/anbu6667/anbu-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <Link to="/contact">Contact</Link>
+          </div>
         </div>
         <div className="home-highlights" aria-label="Portfolio highlights">
           <div><strong>05+</strong><span>Projects</span></div>

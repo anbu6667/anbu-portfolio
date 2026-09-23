@@ -366,6 +366,24 @@ body {
   transform: translateY(-2px);
 }
 
+.home-social-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 4px;
+}
+
+.home-social-links a {
+  padding: 10px 11px;
+  color: #155e75;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.home-social-links a:hover {
+  color: #c2410c;
+}
+
 .home-primary-action {
   background: #0e7490;
   color: #ffffff;
