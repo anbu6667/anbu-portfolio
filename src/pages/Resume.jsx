@@ -1,3 +1,5 @@
+const resumeUrl = `${import.meta.env.BASE_URL}anburesume.pdf`;
+
 export default function Resume() {
   return (
     <main className="resume-page">
@@ -10,14 +12,14 @@ export default function Resume() {
               A quick overview of my education, technical skills, and selected work.
             </p>
           </div>
-          <a href="/anburesume.pdf" download className="resume-download-btn">
+          <a href={resumeUrl} download className="resume-download-btn">
             Download PDF <span aria-hidden="true">-&gt;</span>
           </a>
         </header>
 
         <div className="resume-document">
           <iframe
-            src="/anburesume.pdf"
+            src={resumeUrl}
             title="Anbu Selvam N resume"
           />
         </div>
