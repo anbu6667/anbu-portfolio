@@ -10,14 +10,14 @@ export default function Resume() {
               A quick overview of my education, technical skills, and selected work.
             </p>
           </div>
-          <a href="/res.pdf%20(1).pdf" download className="resume-download-btn">
+          <a href="/anburesume.pdf" download className="resume-download-btn">
             Download PDF <span aria-hidden="true">-&gt;</span>
           </a>
         </header>
 
         <div className="resume-document">
           <iframe
-            src="/res.pdf%20(1).pdf"
+            src="/anburesume.pdf"
             title="Anbu Selvam N resume"
           />
         </div>
