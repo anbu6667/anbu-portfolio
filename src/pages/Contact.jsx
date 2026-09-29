@@ -34,15 +34,11 @@ export default function Contact() {
         })
       });
 
-      const result = await response.json();
-      if (!response.ok || result.success !== true) {
-        throw new Error(result.message || "Message delivery failed");
-      }
-
+      if (!response.ok) throw new Error("Message delivery failed");
       setForm({ name: "", contact: "", message: "" });
       setSubmitted(true);
-    } catch (submissionError) {
-      setError(submissionError.message || "Your message could not be sent. Please email me directly instead.");
+    } catch {
+      setError("Your message could not be sent. Please email me directly instead.");
     } finally {
       setSubmitting(false);
     }
