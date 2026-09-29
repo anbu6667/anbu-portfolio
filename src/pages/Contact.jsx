@@ -3,25 +3,45 @@ import React, { useState } from "react";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", contact: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   function handleChange(e) {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
     setSubmitted(false);
+    setError("");
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const subject = `Portfolio message from ${form.name}`;
-    const body = [
-      `Name: ${form.name}`,
-      `Contact: ${form.contact}`,
-      "",
-      form.message
-    ].join("\n");
+    setSubmitting(true);
+    setSubmitted(false);
+    setError("");
 
-    window.location.href = `mailto:anbuselvamkgm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/anbuselvamkgm@gmail.com", {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.contact,
+          message: form.message,
+          _subject: `Portfolio message from ${form.name}`,
+          _template: "table",
+          _captcha: "false",
+          _replyto: form.contact
+        })
+      });
+
+      if (!response.ok) throw new Error("Message delivery failed");
+      setForm({ name: "", contact: "", message: "" });
+      setSubmitted(true);
+    } catch {
+      setError("Your message could not be sent. Please email me directly instead.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -90,9 +110,12 @@ export default function Contact() {
               </label>
 
               <div className="form-actions">
-                <button type="submit" className="primary-btn">Send Message</button>
+                <button type="submit" className="primary-btn" disabled={submitting}>
+                  {submitting ? "Sending..." : "Send Message"}
+                </button>
               </div>
-              {submitted && <p className="form-success" role="status">Your email app opened with the message ready to send.</p>}
+              {submitted && <p className="form-success" role="status">Your message was sent successfully.</p>}
+              {error && <p className="form-error" role="alert">{error}</p>}
             </form>
           </section>
         </div>
